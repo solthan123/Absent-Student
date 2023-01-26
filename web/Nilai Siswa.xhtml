@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="resource/css/cssAbsentStudent.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+        <script src="https://kit.fontawesome.com/6f53881389.js"></script>
+        <title>Nilai Siswa</title>
+    </h:head>
+    <h:body>
+        <header id="header" class="header sticky-top">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="Home.xhtml" class="logo d-flex align-items-center">
+            <span>Absent Student</span>
+            </a>
+
+        <!-- Navbar -->
+
+            <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link" href="Home.xhtml">Home</a></li>
+                <li><a class="nav-link" href="Nama Siswa.xhtml">Nama Siswa</a></li>
+                <li><a class="nav-link" href="Nilai Siswa.xhtml">Nilai Siswa</a></li>
+                <li><a class="getstarted scrollto" href="Login.xhtml">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+      </header>
+            <h:form class="container">
+                <h2 class="h2">Nilai Siswa</h2>&nbsp;
+            <h:dataTable class="table" border="1" value="#{tblNilaisiswa.getAllRecords()}" var="nSiswa">
+            <h:column>
+                <f:facet name="header">Nomor</f:facet>
+                    #{nSiswa.idSiswa}
+            </h:column>
+            <h:column>
+                <f:facet name="header">NIM</f:facet>
+                    #{nSiswa.nomorSiswa}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Kelas</f:facet>
+                    #{nSiswa.kelas}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nama Siswa</f:facet>
+                    #{nSiswa.namaSiswa}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Tanggal Kehadiran</f:facet>
+                    #{nSiswa.tanggalKehadiran}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Mata Pelajaran</f:facet>
+                    #{nSiswa.mataPelajaran}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nilai</f:facet>
+                    #{nSiswa.nilai}
+            </h:column>
+            </h:dataTable>
+            </h:form>
+            <hr/>
+            <h:form class="container">
+            <div class="form-group">
+            <h2 class="h2">Mencari Data</h2><br/>
+            <h:inputText class="form-control form-control-lg" a:placeholder="Nomor" value="#{tblNilaisiswa.idSiswa}"/><br/>
+            <h:commandButton class="btn btn-primary" value="Search" action="#{tblNilaisiswa.getById()}"/><br/>
+            </div>
+            <hr/>
+            </h:form>
+            <h:form class="container">
+            <div class="form-group">
+            <h2 class="h2">Mengisi Nilai dan Kehadiran Siswa</h2>&nbsp;
+            <div class="form-group">
+            <h:inputText class="form-control form-control-lg" a:placeholder="Nomor" value="#{tblNilaisiswa.idSiswa}"/><br/>&nbsp;
+            </div>
+            <div class="form-group">
+            <h:inputText class="form-control form-control-lg" a:placeholder="NIM" value="#{tblNilaisiswa.nomorSiswa}"/><br/>&nbsp;
+            </div>
+            <div class="form-group">
+            <h:inputText class="form-control form-control-lg" a:placeholder="Kelas" value="#{tblNilaisiswa.kelas}"/><br/>&nbsp;
+            </div>
+            <div class="form-group">
+            <h:inputText class="form-control form-control-lg" a:placeholder="Nama Siswa" value="#{tblNilaisiswa.namaSiswa}"/><br/>&nbsp;
+            </div>
+            <div class="form-group">
+            <h:inputText class="form-control form-control-lg" a:type="date" value="#{tblNilaisiswa.tanggalKehadiran}"/><br/>&nbsp;
+            </div>
+            <div class="form-group">
+            <h:inputText class="form-control form-control-lg" a:placeholder="Mata Pelajaran" value="#{tblNilaisiswa.mataPelajaran}"/><br/>&nbsp;
+            </div>
+            <div class="form-group">
+            <h:inputText class="form-control form-control-lg" a:placeholder="Nilai" value="#{tblNilaisiswa.nilai}"/><br/>&nbsp;
+            </div>
+            <div class="form-group">
+            <h:commandButton class="btn btn-primary" value="Save" action="#{tblNilaisiswa.save_nilaisiswa()}"/>&nbsp; 
+            <h:commandButton class="btn btn-primary" value="Edit" action="#{tblNilaisiswa.editnilaiSiswa()}"/>&nbsp; 
+            <h:commandButton class="btn btn-danger" value="Delete" action="#{tblNilaisiswa.deletenilaiSiswa()}"/>&nbsp;
+            </div>
+            </div>
+            <hr/>
+        </h:form>
+    </h:body>
+</html>
+

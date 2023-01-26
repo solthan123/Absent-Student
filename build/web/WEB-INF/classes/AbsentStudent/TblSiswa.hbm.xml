@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 30, 2021 10:24:16 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="AbsentStudent.TblSiswa" table="tbl_siswa" catalog="absentstudent_1" optimistic-lock="version">
+        <id name="idSiswa" type="int">
+            <column name="id_siswa" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomorSiswa" type="string">
+            <column name="nomor_siswa" length="20" not-null="true" />
+        </property>
+        <property name="kelas" type="string">
+            <column name="kelas" length="20" not-null="true" />
+        </property>
+        <property name="namaSiswa" type="string">
+            <column name="nama_siswa" length="100" not-null="true" />
+        </property>
+        <property name="tanggalLahir" type="string">
+            <column name="tanggal_lahir" length="30" not-null="true" />
+        </property>
+        <property name="jenisKelamin" type="string">
+            <column name="jenis_kelamin" length="20" not-null="true" />
+        </property>
+        <property name="alamat" type="string">
+            <column name="alamat" length="150" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

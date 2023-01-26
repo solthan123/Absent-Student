@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Sign In</title>
+    </h:head>
+    <style>
+        .input_text[type=text],input[type=password]
+        {
+            width: 60%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-black;
+            border: 1px solid #ccc;
+        }
+        
+        .button_log
+        {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 55%;
+        }
+        
+        .model_content
+        {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            border: 1px solid #888;
+            width: 50%;
+            text-align: center;
+        }
+        .background
+        {
+            background-color: #72e0a4;
+        }
+    </style>
+    <h:body class="background">
+        <h:form class="model_content">
+            <h2>Sign In</h2>
+            <h:inputText a:placeholder="Username" class="input_text" value="#{tblUser.username}"/>
+            <h:inputSecret a:placeholder="Password" class="input_text" value="#{tblUser.password}"/>
+            <h:commandButton value="Login" class="button_log" action="#{tblUser.login_user()}"/>
+            <h:commandButton value="Sign Up" class="button_log" action="/Sign Up.xhtml"/>
+        </h:form>
+    </h:body>
+</html>
+
